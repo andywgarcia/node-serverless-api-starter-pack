@@ -1,0 +1,24 @@
+service:
+  name: node-serverless-api-starter-pack
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-west-2'}
+
+functions:
+  helloWorld:
+    handler: functions/helloWorld/index.handler
+    description: My hello world function
+    events:
+      - http:
+          path: sayHello
+          method: get
+
+package:
+  individually: true
+
+plugins:
+  - serverless-bundle
+  - serverless-offline

@@ -1,0 +1,26 @@
+{
+  "name": "serverless-api-starter-pack",
+  "version": "1.0.0",
+  "description": "Common pattern that I use for starting new serverless APIs",
+  "main": "serverless.yml",
+  "scripts": {
+    "test": "echo 'Not yet configured'",
+    "start": "node_modules/.bin/sls offline --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andywgarcia@github.com/andywgarcia/node-serverless-api-starter-pack.git"
+  },
+  "author": "Andy Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andywgarcia/node-serverless-api-starter-pack/issues"
+  },
+  "homepage": "https://github.com/andywgarcia/node-serverless-api-starter-pack#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "serverless": "^1.59.2",
+    "serverless-bundle": "^1.2.5",
+    "serverless-offline": "^5.12.1"
+  }
+}
