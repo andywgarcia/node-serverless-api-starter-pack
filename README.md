@@ -2,6 +2,8 @@
 
 Common pattern that I use for starting new serverless APIs
 
+Requires Node 12.13.0
+
 Comes with:
 
 - Extracted logging module
