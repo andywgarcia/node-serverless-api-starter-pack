@@ -11,3 +11,4 @@ Comes with:
 - Lambda wrapper that will allow for async/await usage
 - Lambda wrapper that will make it easier to do error handling
 - Offline capability
+
