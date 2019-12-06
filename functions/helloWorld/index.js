@@ -1,7 +1,6 @@
-import wrapper from '../../util/httpWrapper';
+import wrapper from '../../util/http/httpWrapper';
 
-export async function handler() {
-  
-  return wrapper("Hello World");
-};
+export const handler = wrapper(async (event, context) => {
+  return "Hello World";
+});
 
