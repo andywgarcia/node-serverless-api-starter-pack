@@ -4,10 +4,11 @@
   "description": "Common pattern that I use for starting new serverless APIs",
   "main": "serverless.yml",
   "scripts": {
-    "test": "./node_modules/.bin/serverless-bundle test --coverage",
+    "test": "node_modules/.bin/serverless-bundle test --coverage",
     "start": "node_modules/.bin/sls offline --port 3001",
     "lint": "node_modules/.bin/eslint \"src/**/*.js\"",
-    "lint:fix": "node_modules/.bin/eslint \"src/**/*.js\" --fix"
+    "lint:fix": "node_modules/.bin/eslint \"src/**/*.js\" --fix",
+    "invoke:helloWorld": "node_modules/.bin/sls invoke local --function helloWorld"
   },
   "repository": {
     "type": "git",
