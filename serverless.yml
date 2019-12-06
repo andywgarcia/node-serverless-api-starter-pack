@@ -9,7 +9,7 @@ provider:
 
 functions:
   helloWorld:
-    handler: functions/helloWorld/index.handler
+    handler: src/functions/helloWorld/index.handler
     description: My hello world function
     events:
       - http:

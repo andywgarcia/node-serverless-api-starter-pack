@@ -1,10 +1,10 @@
 import { ForbiddenError, NotFoundError, BadRequest } from "./errors";
-import {logError, logDebug} from '../logger'
+import { logError, logDebug } from "../logger";
 
 const commonHeaders = {
   "Access-Control-Allow-Origin": "*", // Required for CORS support to work
   "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
-}
+};
 
 const success = body => ({
   statusCode: 200,
@@ -42,8 +42,6 @@ const notFoundError = ({ message }) => ({
   body: JSON.stringify(message)
 });
 
-
-
 export default lambdaHandlerWrapper => {
   const lambdaHandler = async (event, context) => {
     logDebug(JSON.stringify(event));
@@ -52,8 +50,7 @@ export default lambdaHandlerWrapper => {
       const result = await lambdaHandlerWrapper(event, context);
       logDebug(JSON.stringify(result));
       return success(result);
-    }
-    catch (err) {
+    } catch (err) {
       logError(err);
       if (err instanceof ForbiddenError) {
         return forbiddenError(err);
@@ -65,8 +62,7 @@ export default lambdaHandlerWrapper => {
         return internalServerError(err);
       }
     }
-  }
+  };
 
   return lambdaHandler;
 };
-

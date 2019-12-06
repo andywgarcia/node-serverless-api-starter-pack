@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "standard",
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "env": {
+        "jest": true
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "quotes": [
+            2,
+            "double",
+            "avoid-escape"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ]
+    }
+}
