@@ -4,7 +4,7 @@
   "description": "Common pattern that I use for starting new serverless APIs",
   "main": "serverless.yml",
   "scripts": {
-    "test": "echo 'Not yet configured'",
+    "test": "./node_modules/.bin/serverless-bundle test --coverage",
     "start": "node_modules/.bin/sls offline --port 3001",
     "lint": "node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:fix": "node_modules/.bin/eslint \"src/**/*.js\" --fix"
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/andywgarcia/node-serverless-api-starter-pack#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -29,9 +30,34 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
+    "jest-junit": "^10.0.0",
     "prettier": "^1.19.1",
     "serverless": "^1.59.2",
     "serverless-bundle": "^1.2.5",
     "serverless-offline": "^5.12.1"
-  }
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/util/http/**",
+      "!src/util/logger/*"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "html",
+      "text"
+    ]
+  },
+  "jest-junit": {
+    "output": "./test-results/jest/results.xml"
+  },
+  "dependencies": {}
 }
